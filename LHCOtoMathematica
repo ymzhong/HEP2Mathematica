@@ -1,0 +1,74 @@
+#!/bin/bash 
+if [ $# -ne 1 ]; then
+         echo Usage: $0 \<Input\> 
+         exit 127
+fi
+
+cat $1 | awk 'BEGIN{x=0;first=1;firste=1;print "{"}{
+if (x != 0) x=x+1; 
+if( $1 == 0)
+{ 
+   if (x==0) 
+   {
+     x=1;
+     if (firste==0) print ",";
+     print "{"
+   }
+   else 
+   {
+     print "}";
+     firste=0;
+     first=1;
+          x=1;
+     if (firste==0) print ",";
+     print "{"
+   }
+}
+ if ( $1 != 0 && x > 1) 
+ {
+    if ($2 ~ /[0-6]/)  
+    {  
+      if (first==0) print ","; 
+       first=0;
+       if ($2 == 0)
+        pID=22
+      else
+         if (($2 == 1)&& ($7==1.0))
+          pID=-11
+        else
+          if (($2 == 1)&& ($7==-1.0)) 
+            pID=11
+          else
+            if (($2 == 2)&& ($7==1.0))
+              pID=-13
+            else 
+              if (($2 == 2)&& ($7==-1.0))
+              pID=13
+            else
+              if (($2 == 3)&& ($7 > 0))
+                pID=-15
+              else
+                if (($2 == 3)&& ($7< 0))
+                  pID=15
+                else
+                  if (($2 == 4)&& ($8 > 0))
+                    pID=5
+                  else
+                    if (($2 == 4)&& ($8==0.0))
+                      pID=21
+                    else
+                      if (($2 == 6))
+                        pID=12
+                      else
+                        pID=0
+
+      ptx=$5*cos($4);
+      pty=$5*sin($4);
+      theta=2*atan2(exp(-$3),1);
+      ptz=$5/(sin(theta)/cos(theta));
+      ptt=sqrt($5**2+ptz**2+$6**2);
+
+      print "{" pID ", " ptx ", " pty ", " ptz ", " ptt ", " $7 "}";
+    }
+ }
+}END{print "}\n}"}'| sed 's/e/*10^/g;s/E/*10^/g'| sed 's/e/*10^/g;s/E/*10^/g' | sed 's/e/*10^/g;s/E/*10^/g' | sed 's/e/*10^/g;s/E/*10^/g'
