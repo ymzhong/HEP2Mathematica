@@ -2,4 +2,4 @@
 Shell scripts that convert common HEP formats into Mathematica readable format.
 
 [LHCOtoMathematica](./LHCOtoMathematica):
-The format of Large Hadron Collider Olympics (LHCO) data file is explained [here](http://madgraph.phys.ucl.ac.be/Manual/lhco.html). The LHCOtoMathematica script transfer the LHCO information for every particle into an array **{particle ID, x momentum, y momentum, z momentum, energy, no of tracks}**. The no of tracks , i.e., 7th column in LHCO event, gives the number of tracks associated with the object; in the case of a lepton, this number is multiplied by the charge of the lepton.  
+The script transfers the [LHCO](http://madgraph.phys.ucl.ac.be/Manual/lhco.html) information for every particle into an array of **{particle ID, x momentum, y momentum, z momentum, energy, no of tracks}**. Note that in the case of a lepton, the no of tracks is multiplied by the charge of the lepton.  
