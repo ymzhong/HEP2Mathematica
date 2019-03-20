@@ -6,3 +6,6 @@ The script transfers the [LHCO](http://madgraph.phys.ucl.ac.be/Manual/lhco.html)
 
 [LHEtoMathematica](./LHEtoMathematica):
 The script transfers the [LHE](https://arxiv.org/abs/hep-ph/0609017) information of a particle into an array of **{particle ID, x momentum, y momentum, z momentum, energy}**. 
+
+## License
+MIT
