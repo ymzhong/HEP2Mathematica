@@ -10,9 +10,12 @@ The script transfers the [LHE](https://arxiv.org/abs/hep-ph/0609017) information
 
 ## Usage
 1. Ensure the script is executable (i.e. - run chmod a+x scriptname)
-2. Run, e.g.
+2. Run
 ```
 ./LHCOtoMathematica /path/to/event.lhco >> /path/to/event.dat
+```
+```
+./LHEtoMathematica /path/to/event.lhe 1 1 1 >> /path/to/event.dat
 ```
 
 ## License
