@@ -14,6 +14,7 @@ The script transfers the [LHE](https://arxiv.org/abs/hep-ph/0609017) information
 ```
 ./LHCOtoMathematica /path/to/event.lhco >> /path/to/event.dat
 ```
+or
 ```
 ./LHEtoMathematica /path/to/event.lhe 1 1 1 >> /path/to/event.dat
 ```
