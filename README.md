@@ -1,5 +1,5 @@
 # HEP2Mathematica
-Shell scripts that convert common HEP formats into Mathematica readable arrays. It can be used for parton-level output from MadGraph. It can be also used for Delphes ROOT output after converting it to LHCO format through root2lhco. 
+Shell scripts that convert common HEP formats into Mathematica readable arrays. It can be used for parton-level output from MadGraph. It can be also used for Delphes ROOT output after converting it to LHCO format through root2lhco (e.g. `./Delphes/root2lhco /path/to/xx.root /path/to/xx.lhco`). 
 
 [LHCOtoMathematica](./LHCOtoMathematica):
 The script transfers the [LHCO](http://madgraph.phys.ucl.ac.be/Manual/lhco.html) information of a particle into an array of **{[particle ID](https://twiki.cern.ch/twiki/bin/view/Main/PdgId), x momentum, y momentum, z momentum, energy, number of tracks}**. Note that in the case of a lepton, the number of tracks is multiplied by the charge of the lepton (i.e. a muon -1, a positron +1).
